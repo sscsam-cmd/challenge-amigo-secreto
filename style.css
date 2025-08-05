@@ -1,10 +1,11 @@
+/* Paleta de colores */
 :root {
-    --color-primary: #4B69FD;
-    --color-secondary: #FFF9EB;
-    --color-tertiary: #C4C4C4;
-    --color-button: #fe652b;
-    --color-button-hover: #e55720;
-    --color-text: #444444;
+    --color-primary: #0f172a;      /* Azul muy oscuro, casi negro */
+    --color-secondary: #1e293b;    /* Gris azulado oscuro */
+    --color-tertiary: #64748b;     /* Gris azulado claro */
+    --color-accent: #4B69FD;       /* Azul vibrante */
+    --color-accent-hover: #3751d8;
+    --color-text: #f8fafc;         /* Gris muy claro (casi blanco) */
     --color-white: #FFFFFF;
 }
 
@@ -15,148 +16,161 @@
     box-sizing: border-box;
 }
 
+/* Fondo y tipografía */
 body {
-    height: 100vh;
-    background-color: var(--color-primary);
+    font-family: "Inter", sans-serif;
+    background: linear-gradient(45deg, #1a407c, #2c5f9e, #3a7ab8, #4d9ef4);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    color: var(--color-text);
+    min-height: 100vh;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Animación del fondo */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* Contenedor principal */
 .main-content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
+    width: 90%;
+    max-width: 800px;
+    background-color: var(--color-secondary);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+/* Títulos */
+.main-title {
+    font-size: 50px;
+    color: var(--color-accent);
+    text-align: center;
+    margin: 20px 0;
+}
+
+.section-title {
+    font-size: 25px;
+    color: var(--color-white);
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 /* Banner */
 .header-banner {
-    flex: 40%;
+    flex: 0 0 40%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 40px 0 0;
 }
 
-/* Sección de entrada */
-.input-section {
-    flex: 60%;
-    background-color: var(--color-secondary);
-    border: 1px solid #000;
-    border-radius: 64px 64px 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
-}
-
-/* Títulos */
-.main-title {
-    font-size: 48px;
-    font-family: "Merriweather", serif;
-    font-weight: 900;
-    font-style: italic;
-    color: var(--color-white);
-}
-
-.section-title {
-    font-family: "Inter", serif;
-    font-size: 36px;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin: 10px 0;
-    text-align: center;
-}
-
-/* Contenedores de entrada y botón */
+/* Input y boton añadir*/
 .input-wrapper {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
     display: flex;
     justify-content: center;
-    width: 100%;
-    max-width: 600px;
-    margin-top: 20px;
 }
+
 
 .input-name {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #000;
-    border-radius: 25px 0 0 25px;
-    font-size: 16px;
-}
-
-.button-container {
-    width: 300px;
-    justify-content: center;
-}
-
-/* Estilos de entrada de texto */
-.input-title {
     flex: 1;
-    padding: 10px 15px;
+    padding: 12px;
     font-size: 16px;
-    border: 2px solid #333;
-    border-right: none;
-    border-radius: 25px 0 0 25px;
-    font-family: "Merriweather", serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Estilos de botón */
-button {
-    padding: 15px 30px;
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    border: 2px solid #000;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
+    border: none;
+    border-radius: 8px 0 0 8px;
+    background-color: #0f172a;
+    color: var(--color-text);
+    outline: none;
 }
 
 .button-add {
-    background-color: var(--color-tertiary);
-    color: var(--color-text);
-    border-radius: 0 25px 25px 0;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    border-radius: 0 8px 8px 0;
+    transition: background-color 0.3s;
+
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
 }
 
 .button-add:hover {
-    background-color: #a1a1a1;
+    background-color: var(--color-accent-hover);
 }
 
-/* Listas */
-ul {
-    list-style-type: none;
-    color: var(--color-text);
-    font-family: "Inter", sans-serif;
+/* Lista de nombres y boton eliminar*/ 
+.name-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #334155;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 8px auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 60%;
+}
+
+.boton-eliminar {
+    background: transparent;
+    border: none;
+    color: #f87171;
     font-size: 18px;
-    margin: 20px 0;
+    cursor: pointer;
+    transition: color 0.2s;
 }
 
-.result-list {
-    margin-top: 15px;
-    color: #05DF05;
-    font-size: 22px;
-    font-weight: bold;
-    text-align: center;
+.boton-eliminar:hover {
+    color: #ef4444;
 }
 
-/* Botón de sortear título */
+/* Boton de sortear*/
 .button-draw {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 10px;
     width: 100%;
-    padding: 10px 40px;
-    color: var(--color-white);
-    background-color: var(--color-button);
-    font-size: 16px;
-}
-
-.button-draw img {
-    margin-right: 40px;
+    transition: background-color 0.3s;
 }
 
 .button-draw:hover {
-    background-color: var(--color-button-hover);
+    background-color: var(--color-accent-hover);
+}
+
+.button-draw img {
+    height: 20px;
+}
+
+/* Resultado del sorteo */
+.result-list {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #10b981;
+    text-align: center;
 }
