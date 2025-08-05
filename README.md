@@ -5,14 +5,16 @@
 
 
 ## 📝 Descripción del proyecto
-**Amigo Secreto** es una app web intuitiva que permite organizar sorteos de "amigo secreto" entre amigos, compañeros o familiares. Cuenta con una interfaz moderna, animación de fondo y es totalmente responsiva.
+**Amigo Secreto** es una app web intuitiva que permite organizar sorteos de "amigo secreto" entre amigos, compañeros o familiares. Cuenta con una interfaz moderna, animación de fondo y es totalmente responsiva.  
+Permite a los usuarios ingresar una lista de nombres y, con un solo clic, realizar un sorteo aleatorio para descubrir quién será su amigo secreto.
 
+### 🔧 ¿Cómo funciona?
+- Los participantes escriben su nombre en un campo de texto y lo agregan a la lista presionando el botón "**Añadir**".
+- La lista de nombres se muestra en pantalla para mayor claridad.
+- Si el campo está vacío al intentar agregar un nombre, se muestra una alerta pidiendo una entrada válida.
+- Al presionar "**Sortear Amigo**", la aplicación selecciona un nombre al azar entre los participantes y lo muestra como el resultado del sorteo.
 
-## ⚙️ Funcionalidades
-- Añadir nombres de participantes
-- Eliminar participantes
-- Sortear un amigo secreto aleatorio
-- Interfaz responsiva con animación de fondo
+Esta herramienta es perfecta para reuniones familiares, eventos de oficina o cualquier grupo de amigos que desee organizar su sorteo de forma rápida, sencilla y divertida.
 
 
 ## 🖥️ Vista previa
