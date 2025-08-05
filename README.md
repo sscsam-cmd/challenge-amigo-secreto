@@ -15,12 +15,12 @@
 
 
 ## 🚀 Acceso al proyecto
-Puedes acceder al proyecto [aquí](https://tusitio.com)  
+Puedes acceder al proyecto [aquí](https://sscsam-cmd.github.io/challenge-amigo-secreto/)  
 O descargarlo y abrir el archivo `index.html` en tu navegador.
 
 ```bash
-git clone https://github.com/usuario/amigo-secreto.git
-cd amigo-secreto
+git clone https://github.com/sscsam-cmd/challenge-amigo-secreto.git
+cd challenge-amigo-secreto
 ```
 #### 📁 Estructura del proyecto
 ```
